@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">
+      Vacation Rentals, Homes, Experiences & Places - Airbnb
+    </title>
+    <link
+      rel="icon"
+      href="https://www.searchpng.com/wp-content/uploads/2019/02/Airbnb-Logo-PNG-Image-1024x1024.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="View/homePage.css" />
+    <link rel="stylesheet" href="View/filteredHomesPage.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="View/detailedHome.css" />
+    <link rel="stylesheet" href="View/profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.2/js/v4-shims.js"
+    ></script>
+  </head>
+  <body>
+    <div id="PlacesToStay">
+      <header id="homePage-header">
+        <nav id="homePage-nav">
+          <div id="homePage-logo">
+            <i class="fab fa-airbnb"></i>
+            <p>airbnb</p>
+          </div>
+          <div id="homePage-navigation">
+            <a id="linkPlacesToStay" href="#PlacesToStay">Places to stay</a>
+            <a href="#Experiences">Experiences</a>
+            <a href="#Online-Experiences">Online Experiences</a>
+          </div>
+          <div id="becomeHost-language-profile">
+            <button id="homePage-hostButton">Become a host</button>
+            <button id="homePage-languageButton">
+              <i class="fas fa-globe-europe"></i>
+            </button>
+            <div id="profileInHeader">
+              <i class="fas fa-bars"></i>
+              <div id="user-fontawesome">
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </div>
+            <div id="dropdown-profileInHeader">
+              <div>
+                <a id="dropdown-signIn">Sign up</a>
+                <a id="dropdown-logIn">Log in</a>
+                <a id="my-profile">My Profile</a>
+                <a href="https://www.airbnb.com/host/homes">Host your home</a>
+                <a href="https://www.airbnb.com/d/onlinehost"
+                  >Host an experience</a
+                >
+                <a href="https://www.airbnb.com/help">Help</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div id="homePage-filter">
+          <form autocomplete="off" id="homePage-filter-form">
+            <div id="location" class="homePage-filter-text">
+              <p class="homePage-filter-firstText">Location</p>
+              <p
+                id="homePage-filter-location-secondText"
+                class="homePage-filter-secondText"
+              >
+                Where are you going?
+              </p>
+              <input
+                placeholder="Town"
+                id="filter-input-location"
+                type="text"
+              />
+            </div>
+            <div id="homePage-filter-checkIn-div" class="homePage-filter-text">
+              <p class="homePage-filter-firstText">Check in</p>
+              <p
+                id="homePage-filter-checkIn-secondText"
+                class="homePage-filter-secondText"
+              >
+                Add dates
+              </p>
+              <input id="filter-input-checkIn" type="date" />
+            </div>
+            <div id="homePage-filter-checkOut-div" class="homePage-filter-text">
+              <p class="homePage-filter-firstText">Check out</p>
+              <p
+                id="homePage-filter-checkOut-secondText"
+                class="homePage-filter-secondText"
+              >
+                Add dates
+              </p>
+              <input id="filter-input-checkOut" type="date" />
+            </div>
+            <div id="homePage-filter-guests-div" class="homePage-filter-text">
+              <p class="homePage-filter-firstText">Guests</p>
+              <p
+                id="homePage-filter-guests-secondText"
+                class="homePage-filter-secondText"
+              >
+                Add guests
+              </p>
+              <input id="filter-input-guests" type="number" />
+            </div>
+            <div id="homePage-filter-submit-div" class="homePage-filter-text">
+              <button id="filter-input-submit" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <p id="warning-filter">Please fill inputs currect</p>
+        <p id="homePage-header-text">Go Near</p>
+        <button id="homePage-header-button">Explore nearby stays</button>
+        <div id="homePage-login-external-div">
+          <div id="homePage-logIn">
+            <div id="close-logIn-homePage">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <p>Log In</p>
+            <form id="login-form">
+              <label for="username">Username:</label>
+              <input autocomplete="off" type="text" name="username" id="username-logIn" />
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password-logIn" />
+              <p id="warning-login"></p>
+              <input type="submit" value="Continue" id="logIn-button" />
+            </form>
+          </div>
+        </div>
+        <div id="homePage-signIn-external-div">
+          <div id="homePage-signIn">
+            <div id="close-signIn-homePage">
+              <i class="far fa-times-circle"></i>
+            </div>
+            <p>Sign In</p>
+            <form id="signIn-form">
+              <label  for="username">Username:</label>
+              <input autocomplete="off" type="text" name="username" id="username-signIn" />
+              <label for="name">Name:</label>
+              <input autocomplete="off" type="text" name="name" id="name-signIn" />
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password-signIn" />
+              <label for="passwordRepeat">Repeat Password:</label>
+              <input
+                type="password"
+                name="passwordRepeat"
+                id="password-signIn-Repeat"
+              />
+              <p id="warning-signIn"></p>
+              <input type="submit" value="Continue" id="signIn-button" />
+            </form>
+          </div>
+        </div>
+      </header>
+      <section id="homePage-towns">
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/a161fb95-6875-4aaa-aecd-3a46dead3220.jpg"
+            alt="Varna"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Varna</p>
+            <p>5 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/c2eba2e9-0d80-4704-9e2c-34ac16316c53.jpg"
+            alt="Sveti Vlas"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Sveti Vlas</p>
+            <p>6 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/105b8160-1109-4678-b8aa-367ea9faebea.jpg"
+            alt="Velingrad"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Velingrad</p>
+            <p>4.5 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/331e6c6a-ba64-4b51-81bf-4d6c610d45a3.jpg"
+            alt="Belogradchik"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Belogradchik</p>
+            <p>3.5 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/847cfb7f-788d-42dc-9148-f375348dde76.jpg"
+            alt="Burgas"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Burgas</p>
+            <p>5.5 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/ac2086c9-df0d-4085-94c0-94fe3fb94862.jpg"
+            alt="Gabrovo"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Gabrovo</p>
+            <p>2.5 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg"
+            alt="Sinemorets"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Sinemorets</p>
+            <p>7 hour drive</p>
+          </div>
+        </div>
+        <div class="homePage-towns-container">
+          <img
+            src="https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg"
+            alt="Byala"
+          />
+          <div class="homePage-towns-container-text">
+            <p class="homePage-towns-bold-text">Byala</p>
+            <p>5.5 hour drive</p>
+          </div>
+        </div>
+      </section>
+      <section id="homePage-liveAnywhere">
+        <p>Live Anywhere</p>
+        <div id="homePage-liveAnywhere-allContainers">
+          <div
+            id="liveAnywhere-div-entireHomes"
+            class="homePage-liveAnywhere-container"
+          >
+            <img
+              src="https://a0.muscache.com/im/pictures/a0316ecb-e49b-4b3a-b6b6-c2876b820e8c.jpg"
+              alt="Hause"
+            />
+            <p>Entire homes</p>
+          </div>
+          <div
+            id="liveAnywhere-div-cabinsAndCottages"
+            class="homePage-liveAnywhere-container"
+          >
+            <img
+              src="https://a0.muscache.com/im/pictures/ff69ac49-64e7-4f4a-ae2b-ee01163d0790.jpg"
+              alt="Cabin"
+            />
+            <p>Cabins and cottages</p>
+          </div>
+          <div
+            id="liveAnywhere-div-uniqueStays"
+            class="homePage-liveAnywhere-container"
+          >
+            <img
+              src="https://a0.muscache.com/im/pictures/ce6814ba-ed53-4d6e-b8f8-c0bbcf821011.jpg"
+              alt="Outdoor hause"
+            />
+            <p>Unique stays</p>
+          </div>
+          <div
+            id="liveAnywhere-div-petsWelcome"
+            class="homePage-liveAnywhere-container"
+          >
+            <img
+              src="https://a0.muscache.com/im/pictures/fbe849a4-841a-41b3-b770-419402a6316f.jpg"
+              alt="Dog"
+            />
+            <p>Pets Welcome</p>
+          </div>
+        </div>
+      </section>
+      <section id="homePage-onlineExperiences">
+        <div id="homePage-onlineExperiences-allElements">
+          <div id="homePage-onlineExperiences-head">
+            <div>
+              <p class="homePage-onlineExperiences-title">Online Experiences</p>
+              <p class="homePage-onlineExperiences-description">
+                Interactive activities you can do together, led by expert hosts.
+              </p>
+            </div>
+            <div>
+              <button id="homePage-onlineExperiences-button">
+                Explore All
+              </button>
+            </div>
+          </div>
+          <div id="homePage-onlineExperiences-body">
+            <div class="homePage-onlineExperiences-main-container">
+              <img
+                src="https://a0.muscache.com/im/pictures/22f7dfe7-344e-4b55-88a0-3da9e0d45c97.jpg"
+                alt="Italian grandma"
+              />
+              <p>Make handmade pasta with Italian grandmas</p>
+            </div>
+            <div class="homePage-onlineExperiences-other-containers">
+              <div
+                class="homePage-onlineExperiences-container-for-second-containers"
+              >
+                <div class="homePage-onlineExperiences-second-containers">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/c4f98b13-4d9e-4376-b014-6b3e827c31d0.jpg"
+                    alt="woman"
+                  />
+                  <p>Practice mindful eating through zen philosophy</p>
+                </div>
+                <div class="homePage-onlineExperiences-second-containers">
+                  <img
+                    src="https://a0.muscache.com/im/pictures/572d1f80-e3dc-4e48-b54b-5c802090e881.jpg"
+                    alt="woman"
+                  />
+                  <p>Get to know Argentina's famous Yerba Mate</p>
+                </div>
+              </div>
+              <div class="homePage-onlineExperiences-third-container">
+                <img
+                  src="https://a0.muscache.com/im/pictures/15c33e47-2301-43bf-8a3c-8c8aa1643aa9.jpg"
+                  alt="woman"
+                />
+                <p>Meditate to music with a Parisian concert pianist</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="homePage-joinHosts">
+        <p>Join millions of hosts on Airbnb</p>
+        <div class="homePage-joinHosts-body">
+          <div>
+            <img
+              src="https://a0.muscache.com/im/pictures/2a16f833-464c-446c-8d74-33eb8c643975.jpg"
+              alt="woman"
+            />
+            <p>Host your home</p>
+          </div>
+          <div>
+            <img
+              src="https://a0.muscache.com/im/pictures/426a8116-0b94-4407-ae87-924126c81d78.jpg"
+              alt="man"
+            />
+            <p>Host an Online Experience</p>
+          </div>
+          <div>
+            <img
+              src="https://a0.muscache.com/im/pictures/a84e92bd-68e6-4ce2-9fdf-b2ce1a377f53.jpg"
+              alt="man"
+            />
+            <p>Host an Experience</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="homePage-filtered-homes-section">
+      <h2 id="title-filtered-homes"></h2>
+      <div id="filtered-homes-buttons">
+        <button id="button-ascending-price-homes">Ascending Price</button>
+        <button id="button-descending-price-homes">Descending Price</button>
+        <button id="button-capacity-homes">Capacity</button>
+        <button id="button-booked-homes">Booked</button>
+        <button id="button-petsAllowed-homes">Pets Allowed</button>
+        <button id="button-apartments-homes">Apartments</button>
+        <button id="button-cabinsAndCottages-homes">Cabins and Cottages</button>
+        <button id="butoon-unique-homes">Unique Homes</button>
+      </div>
+      <div id="filtered-homes-view-buttons">
+        <div id="one-row-view">
+          <i class="fas fa-square"></i>
+        </div>
+        <div id="two-row-view">
+          <i class="fas fa-th-large"></i>
+        </div>
+        <div id="four-row-view">
+          <i class="fas fa-th"></i>
+        </div>
+      </div>
+      <div id="homePage-filtered-homes-div"></div>
+    </div>
+
+    <div id="detailed-home">
+      <section id="detailed-home-header-section">
+        <div id="left-side-detailed-home-head">
+          <div id="head-detailed-home">
+            <div>
+              <h1 id="title-detailed-home"></h1>
+              <div id="div-like-home-grey">
+                <i id="like-home-grey" class="fas fa-heart"></i>
+              </div>
+              <div id="div-like-home-red">
+                <i id="like-home-red" class="fas fa-heart"></i>
+              </div>
+            </div>
+            <p id="people-reserved-this-home"></p>
+          </div>
+          <p id="description-detailed-home"></p>
+          <div id="detailed-home-buttons">
+            <button class="detailed-home-buttons" id="reserve-home">
+              Reserve
+            </button>
+          </div>
+        </div>
+        <img id="detailed-home-image" src="" alt="home" />
+      </section>
+      <section id="home-equipment">
+        <h1>Amenities</h1>
+        <div id="equipment">
+          <div class="equipment">
+            <div id="parkingGreyColorOfAmenities">
+              <i class="fas fa-car greyColorOfAmenities"></i>
+            </div>
+            <div id="parkingWhiteColorOfAmenities">
+              <i class="fas fa-car whiteColorOfAmenities"></i>
+            </div>
+            <p>Parking</p>
+          </div>
+          <div class="equipment">
+            <div id="swimmingGreyColorOfAmenities">
+              <i class="fas fa-swimming-pool greyColorOfAmenities"></i>
+            </div>
+            <div id="swimmingWhiteColorOfAmenities">
+              <i class="fas fa-swimming-pool whiteColorOfAmenities"></i>
+            </div>
+            <p>Swimming</p>
+          </div>
+          <div class="equipment">
+            <div id="smokingGreyColorOfAmenities">
+              <i class="fas fa-smoking greyColorOfAmenities"></i>
+            </div>
+            <div id="smokingWhiteColorOfAmenities">
+              <i class="fas fa-smoking whiteColorOfAmenities"></i>
+            </div>
+            <p>Smoking</p>
+          </div>
+          <div class="equipment">
+            <div id="bathGreyColorOfAmenities">
+              <i class="fas fa-bath greyColorOfAmenities"></i>
+            </div>
+            <div id="bathWhiteColorOfAmenities">
+              <i class="fas fa-bath whiteColorOfAmenities"></i>
+            </div>
+            <p>Bath</p>
+          </div>
+          <div class="equipment">
+            <div id="airGreyColorOfAmenities">
+              <i class="fas fa-fan greyColorOfAmenities"></i>
+            </div>
+            <div id="airWhiteColorOfAmenities">
+              <i class="fas fa-fan whiteColorOfAmenities"></i>
+            </div>
+            <p>Air conditioning</p>
+          </div>
+          <div class="equipment">
+            <div id="wifiGreyColorOfAmenities">
+              <i class="fas fa-wifi greyColorOfAmenities"></i>
+            </div>
+            <div id="wifiWhiteColorOfAmenities">
+              <i class="fas fa-wifi whiteColorOfAmenities"></i>
+            </div>
+            <p>Wifi</p>
+          </div>
+          <div class="equipment">
+            <div id="tvGreyColorOfAmenities">
+              <i class="fas fa-tv greyColorOfAmenities"></i>
+            </div>
+            <div id="tvWhiteColorOfAmenities">
+              <i class="fas fa-tv whiteColorOfAmenities"></i>
+            </div>
+            <p>TV</p>
+          </div>
+          <div class="equipment">
+            <div id="coffeeGreyColorOfAmenities">
+              <i class="fas fa-coffee greyColorOfAmenities"></i>
+            </div>
+            <div id="coffeeWhiteColorOfAmenities">
+              <i class="fas fa-coffee whiteColorOfAmenities"></i>
+            </div>
+            <p>Coffee Machine</p>
+          </div>
+          <div class="equipment">
+            <div id="accessibilityGreyColorOfAmenities">
+              <i class="fas fa-wheelchair greyColorOfAmenities"></i>
+            </div>
+            <div id="accessibilityWhiteColorOfAmenities">
+              <i class="fas fa-wheelchair whiteColorOfAmenities"></i>
+            </div>
+            <p>Accessibility</p>
+          </div>
+          <div class="equipment">
+            <div id="basicGreyColorOfAmenities">
+              <i class="fas fa-toilet-paper greyColorOfAmenities"></i>
+            </div>
+            <div id="basicWhiteColorOfAmenities">
+              <i class="fas fa-toilet-paper whiteColorOfAmenities"></i>
+            </div>
+            <p>Basic amenities</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div id="profile">
+      <div id="left-side">
+        <img id="profile-img" src="View/pictures/profile.png" alt="profile" />
+        <p id="profile-name"></p>
+        <p id="profile-username"></p>
+      </div>
+      <div id="right-side">
+        <div id="favorite-homes-div">
+          <h1 class="profile-title">Favorite Homes</h1>
+          <div id="splide" class="splide">
+            <div class="splide__track">
+              <ul id="splide__list" class="splide__list"></ul>
+            </div>
+          </div>
+        </div>
+        <div id="reserved-homes-div">
+          <h1 class="profile-title">Reserved Homes</h1>
+          <div id="splide2" class="splide">
+            <div class="splide__track">
+              <ul id="splide__list2" class="splide__list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <div>
+        <p>ABOUT</p>
+        <ul>
+          <li>
+            <a href="https://www.airbnb.com/d/howairbnbworks"
+              >How Airbnb works</a
+            >
+          </li>
+          <li><a href="https://www.airbnb.com/press/news">Newsroom</a></li>
+          <li>
+            <a
+              href="https://investors.airbnb.com/?_ga=2.8151986.164855187.1612976398-341634891.1612976398"
+              >Investors</a
+            >
+          </li>
+          <li><a href="https://www.airbnb.com/plus">Airbnb Plus</a></li>
+          <li><a href="https://www.airbnb.com/luxury">Airbnb Luxe</a></li>
+          <li>
+            <a
+              href="https://www.hoteltonight.com/?utm_source_name=Airbnb&utm_campaign_name=Dr_Us_Desktop_Airbnb_Footer"
+              >Hotel Tonight</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/work?s=footer">Airbnb for Work</a>
+          </li>
+          <li><a href="https://www.airbnb.com/d/olympics">Olympics</a></li>
+          <li><a href="https://www.airbnb.com/careers">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>COMMUNITY</p>
+        <ul>
+          <li>
+            <a href="https://www.airbnb.com/diversity">Diversity & Belonging</a>
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/against-discrimination"
+              >Against Discrimination</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/accessibility">Accessibility</a>
+          </li>
+          <li><a href="Airbnb Associates">Airbnb Associates</a></li>
+          <li>
+            <a href="https://www.airbnb.com/d/covid19relief">Frontline Stays</a>
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/invite?r=6">Invite friends</a>
+          </li>
+          <li><a href="https://www.airbnb.com/gift-cards">Gift cards</a></li>
+          <li>
+            <a
+              href="https://www.airbnb.org/?locale=en&_ga=2.8179634.164855187.1612976398-341634891.1612976398"
+              >Airbnb.org</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>HOST</p>
+        <ul>
+          <li>
+            <a href="https://www.airbnb.com/host/homes?from_footer=1"
+              >Host your home</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/d/onlinehost"
+              >Host an Online Experience</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/host/experiences"
+              >Host an Experience</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/help/responsible-hosting"
+              >Responsible hosting</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/resources">Resource Center</a>
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/help/community?s=footer"
+              >Community Center</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>SUPPORT</p>
+        <ul>
+          <li>
+            <a href="https://www.airbnb.com/d/covidsafety"
+              >Our COVID-19 Response</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/help?from=footer">Help Center</a>
+          </li>
+          <li>
+            <a
+              href="https://www.airbnb.com/help/article/2701/extenuating-circumstances-policy-and-the-coronavirus-covid19"
+              >Cancellation options</a
+            >
+          </li>
+          <li>
+            <a href="https://www.airbnb.com/neighbors">Neighborhood Support</a>
+          </li>
+          <li><a href="https://www.airbnb.com/trust">Trust & Safety</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer2">
+      <div class="footer2-privacy-terms-sitemap">
+        <p>© 2021 Airbnb, Inc. All rights reserved ·</p>
+        <a href="https://www.airbnb.com/terms/privacy_policy">Privacy</a>
+        <a href="https://www.airbnb.com/terms">Terms</a>
+        <a href="https://www.airbnb.com/sitemaps/v2">Sitemap</a>
+      </div>
+      <div class="footer2-socialMedia">
+        <a href="https://www.facebook.com/airbnb"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://twitter.com/airbnb"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/airbnb"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+    <script id="home-template" type="text/x-handlebars-template">
+      {{#each homes}}
+        <div id="{{id}}" class="home-template-4">
+          <img
+            id="{{id}}-img"
+            class="home-template-img-4"
+            src={{image}}
+            alt="home"
+          />
+          <div id="{{id}}-text" class="text-template-4">
+            <p id="{{id}}-title" class="template-title-4">
+              {{name}}
+            </p>
+            <p id="{{id}}-price" class="template-price-4">
+              {{price}} BGN / Night
+            </p>
+          </div>
+        </div>
+      {{/each}}
+    </script>
+    <script id="home-template-myProfile" type="text/x-handlebars-template">
+      {{#each homes}}
+        <li class="splide__slide">
+          <img
+            class="img-splide"
+            id="{{id}}-splide"
+            src="{{image}}"
+            alt="photo"
+          />
+          <p class="paragraph-splide">
+            {{name}}
+          </p>
+        </li>
+      {{/each}}
+    </script>
+    <script id="home-template-myProfile2" type="text/x-handlebars-template">
+      {{#each homes}}
+        <li class="splide__slide">
+          <img
+            class="img-splide"
+            id="{{id}}-splide2"
+            src="{{image}}"
+            alt="photo"
+          />
+          <p class="paragraph-splide">
+            {{name}}
+          </p>
+        </li>
+      {{/each}}
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+    <script src="Model/User.js"></script>
+    <script src="Model/UserManager.js"></script>
+    <script src="Model/Home.js"></script>
+    <script src="Model/HomeManager.js"></script>
+    <script src="Model/homeObjects.js"></script>
+    <script src="Controller/utils.js"></script>
+    <script src="Controller/variables.js"></script>
+    <script src="Controller/index.js"></script>
+    <script src="Controller/detailedHome.js"></script>
+    <script src="Controller/filteredHomesPage.js"></script>
+    <script src="Controller/homePage.js"></script>
+    <script src="Controller/profilePage.js"></script>
+    <script src="Controller/user.js"></script>
+  </body>
+</html>

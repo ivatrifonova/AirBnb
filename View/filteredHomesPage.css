@@ -1,0 +1,134 @@
+#homePage-filtered-homes-section {
+  display: none;
+  flex-direction: column;
+  align-content: center;
+}
+
+#homePage-filtered-homes-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#title-filtered-homes {
+  font-size: 2.5vw;
+  margin-top: 4vw;
+  text-align: center;
+}
+
+/* handlebars template */
+.home-template-1 {
+  width: 60vw;
+  height: 40vw;
+  position: static;
+  margin: 4vw 2vw;
+}
+
+.home-template-img-1 {
+  width: 60vw;
+  height: 35vw;
+  border-radius: 1vw;
+}
+
+.text-template-1 {
+  width: 60vw;
+  text-align: center;
+}
+.template-price-1 {
+  font-size: 1.4vw;
+}
+.template-title-1 {
+  font-size: 1.8vw;
+}
+
+/* 2 */
+.home-template-2 {
+  width: 40vw;
+  height: 30vw;
+  position: static;
+  margin: 4vw 2vw;
+}
+
+.home-template-img-2 {
+  width: 40vw;
+  height: 24vw;
+  border-radius: 1vw;
+}
+
+.text-template-2 {
+  width: 40vw;
+  text-align: center;
+}
+.template-price-2 {
+  font-size: 1.3vw;
+}
+.template-title-2 {
+  font-size: 1.7vw;
+}
+
+/* 4 */
+.home-template-4 {
+  width: 20vw;
+  height: 15vw;
+  position: static;
+  margin: 4vw 2vw;
+}
+
+.home-template-img-4 {
+  width: 20vw;
+  height: 13vw;
+  border-radius: 1vw;
+}
+
+.text-template-4 {
+  width: 20vw;
+  text-align: center;
+}
+.template-price-4 {
+  font-size: 1vw;
+}
+.template-title-4 {
+  font-size: 1.4vw;
+}
+
+/* buttons for sort and filter */
+#filtered-homes-buttons {
+  height: 3vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 1vw;
+}
+
+#filtered-homes-buttons > button {
+  font-size: 1.1vw;
+  margin: 0.5vw;
+  transition: font-size 0.5s;
+  outline: none;
+}
+
+#filtered-homes-buttons > button:hover {
+  font-size: 1.2vw;
+  font-weight: bold;
+}
+
+/* buttons for view */
+#filtered-homes-view-buttons {
+  margin-top: 2vw;
+  display: flex;
+  width: 10vw;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-evenly;
+}
+.fa-square, .fa-th-large, .fa-th {
+  margin-top: 0.2vw;
+  width: 2vw;
+}
+#one-row-view, #two-row-view, #four-row-view {
+  border-radius: 0.2vw;
+  /* background-color: rgb(196, 196, 196); */
+  width: 1.7vw;
+  height: 1.7vw;
+  display: flex;
+  justify-content: center;
+}

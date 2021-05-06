@@ -1,0 +1,147 @@
+#profile {
+  display: flex;
+  justify-content: center;
+  height: 40vw;
+  background-image: url(pictures/main-picture.jpg);
+  background-size: cover;
+  background-position: 0 -15vw; 
+  background-repeat: no-repeat;
+}
+#left-side {
+  margin-top: 7vw;
+  width: 30vw;
+}
+#right-side {
+  margin-top: 3vw;
+  width: 65vw;
+  height: 35vw;
+  border-radius: 2vw;
+  background-color: rgba(207, 207, 207, 0.7);
+}
+
+#profile-img {
+  width: 10vw;
+  height: 10vw;
+  margin-left: 10vw;
+  border-radius: 5vw;
+}
+
+#profile-name {
+  text-align: center;
+  font-size: 2vw;
+  font-weight: bold;
+  margin-top: 2vw;
+  margin-bottom: 0.6vw;
+  color: white;
+}
+
+#change-photo-link {
+  text-align: center;
+  font-size: 1vw;
+  cursor: pointer;
+  color: white;
+}
+#profile-picture-change-form {
+  display: flex;
+  flex-direction: column;
+}
+#profile-username {
+  text-align: center;
+  color: white;
+}
+#input-change-profile-picture {
+  display: none;
+  border: 0 0vw 0 0;
+  width: 10vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#label-change-photo {
+  font-size: 1vw;
+  text-align: center;
+  margin-bottom: 1vw;
+  color: white;
+}
+
+#button-profile-picture {
+  display: none;
+  width: 4.3vw;
+  height: 1.5vw;
+  border-radius: 2vw;
+  border: 0.2vw solid rgb(92, 92, 92);
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1vw;
+  background-color: grey;
+  font-size: 0.8vw;
+  text-align: center;
+  outline: none;
+}
+
+#user-img-nav {
+  height: 2vw;
+  width: 2vw;
+  border-radius: 5vw;
+}
+
+#favorite-homes-div {
+  height: 17vw;
+  width: 65vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#like-home-red {
+  color: red;
+}
+#div-like-home-red {
+  display: none;
+}
+#splide, #splide2 {
+  margin-left: 5vw;
+  height: 10vw;
+  width: 55vw;
+  padding-top: 2vw;
+  border-radius: 2vw;
+}
+
+.img-splide {
+  width: 15vw;
+  height: 9vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  border-radius: 2vw;
+}
+
+.splide__arrow--prev {
+left: -2.5vw !important;
+}
+.splide__arrow--next {
+right: -2.5vw !important;
+}
+
+.splide__pagination{
+top: 12.5vw;
+}
+.paragraph-splide {
+  position: absolute;
+  top: 6.5vw;
+  font-size: 1.1vw;
+  margin-top: 0.2vw;
+  width: 15vw;
+  text-align: center;
+  margin-left: 1.5vw;
+  background-color: rgb(112, 112, 112,0.8);
+  color: rgb(214, 213, 213);
+}
+
+.profile-title {
+  color: white;
+  font-weight: bold;
+  margin-left: 3vw;
+  margin-top: 1.5vw;
+  font-size: 1.5vw;
+}
+
